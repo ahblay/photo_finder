@@ -2,24 +2,56 @@ import sys
 from PyQt5.QtWidgets import QApplication, QPushButton, QGroupBox, QDialog, QVBoxLayout, \
     QGridLayout, QLabel, QLineEdit, QFileDialog, QMessageBox, QProgressBar, QScrollArea
 from PyQt5.QtGui import QPixmap, QIcon
-from PyQt5.QtCore import Qt, pyqtSlot, QSize, QThread
+from PyQt5.QtCore import Qt, pyqtSlot, QSize, QThread, pyqtSignal
 import photo_finder as finder
 from pprint import pprint as pp
 import build_index
 from os import path
 from time import sleep
 
-'''
-class ProgressThread(QThread):
-    def __init__(self):
+
+class GetPhotosThread(QThread):
+    add_post = pyqtSignal(tuple)
+
+    def __init__(self, query_string):
         QThread.__init__(self)
+        self.query = query_string
 
     def __del__(self):
         self.wait()
 
-    def run(self):
-'''
+    def on_search(self):
+        results = finder.get_photos(self.query)
+        pp(results)
+        pixmap = []
 
+        operations = len(results)
+        completion = 0
+
+        if not results:
+            print("Query not found.")
+            self.show_warning_modal(self.query)
+        else:
+            for photo in results.keys():
+                completion += (100 / operations)
+                finder.save_to_results(photo)
+                pixmap_item = (QPixmap("results/" + path.basename(photo)),
+                               photo,
+                               results[photo],
+                               int(completion))
+                pixmap.append(pixmap_item)
+                self.add_post.emit(pixmap_item)
+
+                print(completion)
+                #self.search_progress.setValue(int(completion))
+                #print(self.search_progress.value())
+
+        return pixmap
+
+    def run(self):
+        self.on_search()
+        print("Blah")
+        self.sleep(2)
 
 
 
@@ -34,6 +66,8 @@ class App(QDialog):
         self.scroll = QScrollArea()
         self.horizontalGroupBox = QGroupBox()
         self.layout = QGridLayout()
+        self.row = 0
+        self.column = 0
         self.initUI()
 
     def initUI(self):
@@ -91,6 +125,7 @@ class App(QDialog):
     def clear_results(self):
         finder.clear_results()
         self.delete_group_box(self.horizontalGroupBox)
+        self.search_progress.setValue(0)
 
     def delete_group_box(self, group_box):
         group_box.deleteLater()
@@ -120,6 +155,7 @@ class App(QDialog):
 
     @pyqtSlot()
     def on_search(self):
+        '''
         textboxValue = self.textbox.text().split(", ")
         results = finder.get_photos(textboxValue)
         pp(results)
@@ -143,10 +179,53 @@ class App(QDialog):
                 completion += (100 / operations)
                 self.search_progress.setValue(int(completion))
                 print(self.search_progress.value())
+        '''
 
-            self.addGridWidget(pixmap)
-            self.clear.setEnabled(True)
+        textboxValue = self.textbox.text().split(", ")
 
+        self.get_thread = GetPhotosThread(textboxValue)
+        self.get_thread.add_post.connect(self.add_post)
+        self.get_thread.finished.connect(self.completed_search)
+        self.get_thread.start()
+
+        #self.addGridWidget(pixmap)
+        self.clear.setEnabled(True)
+
+    def completed_search(self):
+        self.row = 0
+        self.column = 0
+        QMessageBox.information(self, "Done!", "Done fetching photos!")
+        print("Done!")
+
+    def add_post(self, pixmap_item):
+        self.add_grid_widget(pixmap_item)
+        self.search_progress.setValue(self.search_progress.value() + pixmap_item[3])
+
+    def add_grid_widget(self, item):
+        picture = item[0]
+        keywords = item[2]
+        button = QPushButton('', self)
+        button.setIcon(QIcon(picture))
+        button.setIconSize(QSize(128, 128))
+        button.clicked.connect(self.make_open_thumbnail(picture))
+
+        desc = "\n".join([str(x) for x in keywords])
+
+        lbl = QLabel(desc)
+
+        self.layout.addWidget(button, self.row, self.column)
+        self.column += 1
+        self.layout.addWidget(lbl, self.row, self.column)
+        self.column += 1
+
+        if self.column > 3:
+            self.column = 0
+            self.row += 1
+
+        self.horizontalGroupBox.setLayout(self.layout)
+        self.scroll.setWidget(self.horizontalGroupBox)
+
+    '''
     def addGridWidget(self, pictures):
         row = 0
         column = 0
@@ -175,6 +254,7 @@ class App(QDialog):
 
         self.horizontalGroupBox.setLayout(self.layout)
         self.scroll.setWidget(self.horizontalGroupBox)
+    '''
 
     def clearLayout(self, layout):
         while layout.count() > 0:

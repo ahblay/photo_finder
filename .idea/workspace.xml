@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08e0135d-d85d-4e04-ae3b-26a37bff78c5" name="Default" comment="" />
+    <list default="true" id="08e0135d-d85d-4e04-ae3b-26a37bff78c5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,8 @@
       <file leaf-file-name="photo_finder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/photo_finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
                 <element signature="e#237#529#0" expanded="false" />
@@ -40,8 +42,8 @@
       <file leaf-file-name="build_index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build_index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="44" column="85" lean-forward="false" selection-start-line="44" selection-start-column="85" selection-end-line="44" selection-end-column="85" />
+            <state relative-caret-position="72">
+              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -52,8 +54,8 @@
       <file leaf-file-name="trie.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trie.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="90" column="58" lean-forward="false" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+            <state relative-caret-position="285">
+              <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -62,8 +64,8 @@
       <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+            <state relative-caret-position="117">
+              <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -89,10 +91,14 @@
       <find>rewrite</find>
       <find>master_index</find>
       <find>finder.</find>
-      <find>values</find>
       <find>progress</find>
+      <find>values</find>
       <find>get</find>
+      <find>addGrid</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,6 +118,7 @@
     <option name="width" value="1436" />
     <option name="height" value="877" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -135,6 +142,11 @@
             <path>
               <item name="photo_finder" type="b2602c69:ProjectViewProjectNode" />
               <item name="photo_finder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photo_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photo_finder" type="462c0819:PsiDirectoryNode" />
+              <item name=".gitignore" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -290,9 +302,9 @@
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3107417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21483377" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21611254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27116212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -446,28 +458,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui2.py" />
-    <entry file="file://$PROJECT_DIR$/build_index.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="44" column="85" lean-forward="false" selection-start-line="44" selection-start-column="85" selection-end-line="44" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="402">
+          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trie.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="90" column="58" lean-forward="false" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+        <state relative-caret-position="285">
+          <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -480,10 +482,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/photo_finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
             <element signature="e#237#529#0" expanded="false" />
@@ -494,10 +504,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+        <state relative-caret-position="117">
+          <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
