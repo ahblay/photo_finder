@@ -114,7 +114,6 @@ class App(QDialog):
         button_layout.addWidget(self.search_progress, 3, 0)
 
         windowLayout.addLayout(button_layout)
-        #windowLayout.addWidget(self.horizontalGroupBox)
         windowLayout.addWidget(self.scroll)
         windowLayout.addWidget(self.clear)
 
@@ -131,6 +130,10 @@ class App(QDialog):
         group_box.deleteLater()
         self.horizontalGroupBox = QGroupBox()
         self.layout = QGridLayout()
+
+    def delete_group_box_save_children(self, group_box):
+        group_box.deleteLater()
+        self.horizontalGroupBox = QGroupBox()
 
     def open_file(self):
         options = QFileDialog.Options()
@@ -202,6 +205,8 @@ class App(QDialog):
         self.search_progress.setValue(self.search_progress.value() + pixmap_item[3])
 
     def add_grid_widget(self, item):
+        self.delete_group_box_save_children(self.horizontalGroupBox)
+
         picture = item[0]
         keywords = item[2]
         button = QPushButton('', self)
